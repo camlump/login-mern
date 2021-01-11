@@ -1,4 +1,5 @@
-.react-icon {
-    font-size: 30px;
-    vertical-align: middle;
+.App {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }

@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import photo from '../images/bootcamp.jpg'
+
+
+import './Register.css';
 
 class Register extends Component {
   constructor() {
@@ -39,12 +43,12 @@ class Register extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-      const newUser = {
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password,
-        password2: this.state.password2,
-      };
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2,
+    };
 
     console.log(newUser);
     this.props.registerUser(newUser, this.props.history);
@@ -52,23 +56,28 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container">
+      <div className="register-container">
+        <div className="empty-nav">
+        <Link to="/" className="home-link">Back to home</Link>
+        </div>
+
         <div className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
+          <div>
+            
+
+            <div className="form-container">
+
+              <h4><b>Create your account</b></h4>
+
+              <p className="login-p">
+                Already have an account? <Link className="login" to="/login">Log in</Link>
               </p>
-            </div>
+
+             <hr/>
+          
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+              <div className="input-field">
+                <p className="input-title">Name</p>
                 <input
                   onChange={this.onChange}
                   value={this.state.name}
@@ -76,13 +85,14 @@ class Register extends Component {
                   id="name"
                   type="text"
                   className={classnames("", {
-                    invalid: errors.name
+                    invalid: errors.name,
                   })}
                 />
-                <label htmlFor="name">Name</label>
-                <span className="red-text">{errors.name}</span>
+                {/* <label htmlFor="name">Name</label> */}
+                <p className="red-text">{errors.name}</p>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field">
+                <p className="input-title">Email</p>
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -90,13 +100,14 @@ class Register extends Component {
                   id="email"
                   type="email"
                   className={classnames("", {
-                    invalid: errors.email
+                    invalid: errors.email,
                   })}
                 />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">{errors.email}</span>
+                {/* <label htmlFor="email">Email</label> */}
               </div>
-              <div className="input-field col s12">
+                <p className="red-text">{errors.email}</p>
+              <div className="input-field">
+                <p className="input-title">Password</p>
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -104,13 +115,15 @@ class Register extends Component {
                   id="password"
                   type="password"
                   className={classnames("", {
-                    invalid: errors.password
+                    invalid: errors.password,
                   })}
                 />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">{errors.password}</span>
+                {/* <label htmlFor="password">Password</label> */}
               </div>
-              <div className="input-field col s12">
+                <p className="red-text">{errors.password}</p>
+
+              <div className="input-field">
+                <p className="input-title">Comfirm Password</p>
                 <input
                   onChange={this.onChange}
                   value={this.state.password2}
@@ -118,28 +131,21 @@ class Register extends Component {
                   id="password2"
                   type="password"
                   className={classnames("", {
-                    invalid: errors.password2
+                    invalid: errors.password2,
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
-                <span className="red-text">{errors.password2}</span>
+                {/* <label htmlFor="password2">Confirm Password</label> */}
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <p className="red-text">{errors.password2}</p>
                 <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem",
-                  }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
+                  className="sign-up-button">
                   Sign up
                 </button>
+              </form>
               </div>
-            </form>
           </div>
+          
         </div>
       </div>
     );

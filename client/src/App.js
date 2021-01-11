@@ -45,7 +45,7 @@ if (localStorage.jwtToken) {
       <Provider store={store}>
       <Router>
         <div className="App">
-        <Nav />
+       
         <Route exact path="/" component={Landing} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />

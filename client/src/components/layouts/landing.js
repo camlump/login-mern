@@ -1,54 +1,61 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
+import "./Landing.css";
+
 class landing extends Component {
-    render() {
-        return (
-            <div style={{ height: "75vh" }} className="container valign-wrapper">
-                 <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-              <b>Build</b> a login/auth app with the{" "}
-              <span style={{ fontFamily: "monospace" }}>MERN</span> stack from
-              scratch
-            </h4>
-            <p className="flow-text grey-text text-darken-1">
-              Create a (minimal) full-stack app with user authentication via
-              passport and JWTs
-            </p>
-            <br />
-            <div className="col s6">
-              <Link
-                to="/register"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >
-                Register
-              </Link>
-            </div>
-            <div className="col s6">
-              <Link
-                to="/login"
-                style={{
-                  width: "140px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px"
-                }}
-                className="btn btn-large btn-flat waves-effect white black-text"
-              >
-                Log In
-              </Link>
+  render() {
+    return (
+      <div className="landing">
+        <div className="bg-image"></div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              Navbar
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                
+                <li class="nav-item">
+                  <Link to="/register" class="nav-link">
+                    Sign up
+                  </Link>
+                </li>
+                <li class="nav-item">
+                <Link to="/login" class="nav-link">
+                    Login in
+                  </Link>
+                </li>
+                
+              </ul>
             </div>
           </div>
+        </nav>
+        <div className="landing-content">
+          <div className="text-content">
+            <h2 className="title-content">
+             GADUE
+            </h2>
+            <h4 className="sub-title">
+             Do you need a way to keep track of your work?
+            </h4>
+          </div>
         </div>
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 }
 
 export default landing;

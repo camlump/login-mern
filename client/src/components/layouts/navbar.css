@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+
+
+.react-icon {
+    vertical-align: middle;
+    width: 30px;
+    color: #eee !important;
+}
+.navbar {
+    background: #0E0E10 !important;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #eee !important;
+    font-family: 'Fira Sans';
+    vertical-align: middle;
+}

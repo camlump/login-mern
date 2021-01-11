@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { RiAccountBoxFill } from 'react-icons/ri'
 import {IconContext } from 'react-icons'
 
+import Navbar  from './navbar.css'
+
 export default class navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               Navbar
